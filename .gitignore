@@ -1,0 +1,5 @@
+# static pages
+public/
+
+# server generated
+resources/
