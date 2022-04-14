@@ -1,5 +1,1 @@
-# static pages
-public/
-
-# server generated
-resources/
+node_modules
