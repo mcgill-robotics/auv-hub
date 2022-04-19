@@ -1,9 +1,12 @@
+body {
+   /* background-color: ghostwhite;*/
+}
+
 #root-container {
     width: 1200px;
     margin: 0 auto;
-    background-color: ghostwhite;
     font-family: ubuntu;
-    color: rgb(51, 51, 51)
+    /*color: rgb(51, 51, 51)*/
 }
 
 h1 {
@@ -13,8 +16,9 @@ h1 {
 }
 
 ul.resource-list {
+    display: flex;
     margin: 0 30px;
-    height: 125px;
+    height: 175px;
     padding: 0;
 }
 
