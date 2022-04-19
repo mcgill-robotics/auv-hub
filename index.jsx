@@ -3,43 +3,43 @@
 
 const slack = {
     link: "http://slack.com", 
-    imgUrl: "../../images/slack.png", 
+    imgUrl: "images/slack.svg", 
     alt: "McGill Robotics 2021/22 slack", 
     name: "slack"
 };
 const discord = {
     link: "http://discord.com", 
-    imgUrl: "../../images/discord.png", 
+    imgUrl: "images/discord.svg", 
     alt: "McGill Robotics 2021/22 discord", 
     name: "discord"
 };
 const googleDrive = {
     link: "http://drive.google.com", 
-    imgUrl: "../../images/google-drive.png", 
+    imgUrl: "images/google-drive.svg", 
     alt: "McGill Robotics 2021/22 Google Drive", 
     name: "Google Drive"
 };
 const github = {
     link: "http://github.com", 
-    imgUrl: "../../images/github.png", 
+    imgUrl: "images/github.svg", 
     alt: "McGill Robotics 2021/22 Github", 
     name: "Github"
 };
 const trello = {
     link: "http://trello.com", 
-    imgUrl: "../../images/trello.png", 
+    imgUrl: "images/trello.svg", 
     alt: "McGill Robotics 2021/22 Trello", 
     name: "Trello"
 };
 const kiCAD = {
     link: "http://kicad.com", 
-    imgUrl: "../../images/kicad.png", 
+    imgUrl: "images/kicad.svg", 
     alt: "McGill Robotics 2021/22 kiCAD", 
     name: "KiCAD"
 };
 const freeCAD = {
     link: "http://freecad.com", 
-    imgUrl: "../../images/freecad.png", 
+    imgUrl: "images/freecad.svg", 
     alt: "McGill Robotics 2021/22 FreeCAD", 
     name: "FreeCAD"
 };
@@ -57,7 +57,7 @@ class App extends React.Component {
 
 	render(){
         return(
-        <div id="components">
+        <div id="root-container">
             <h1>McGill Robotics Links</h1>
             <ResourcesList 
                 resources={this.state.roboticsResources}/>
@@ -91,9 +91,9 @@ class SubSection extends React.Component {
 class ResourcesList extends React.Component {
 	render(){
 		return(
-            <ul className="resourcesList">
+            <ul className="resource-list">
                 {this.props.resources.map(r =>
-                    <li key={r.name}>
+                    <li className="resource-item" key={r.name}>
                         <Resource 
                             link={r.link}
                             imgUrl={r.imgUrl}
@@ -109,15 +109,27 @@ class ResourcesList extends React.Component {
 class Resource extends React.Component {
 	render(){
 		return(
-			<span className="resource">
-				<a  href={this.props.link}>
-					<img href={this.props.imgUrl}
-					     alt={this.props.alt}/>
-					<p>{this.props.name}</p>
-				</a>
-			</span>
+            <a href={this.props.link}>
+                <div className="resource-outer">
+                    <div className="resource-inner" href={this.props.link}>
+                        <Tile imgUrl={this.props.imgUrl}/> 
+                        <p className="tile-name">{this.props.name}</p>
+                    </div>
+                </div>
+            </a>
 		)			
 	}
 }
 
-ReactDOM.render(<App/>, document.getElementById('root-container'));
+class Tile extends React.Component {
+    render(){
+        return(
+            <div className="tile">
+                <img className="icon"
+                    src={this.props.imgUrl}/>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<App/>, document.getElementsByTagName('body')[0]);
