@@ -5,7 +5,7 @@ body {
 #root-container {
     width: 1200px;
     margin: 0 auto;
-    font-family: ubuntu;
+    font-family: "Ubuntu" "Noto Sans";
     /*color: rgb(51, 51, 51)*/
 }
 
@@ -26,28 +26,38 @@ li.resource-item{
     display: inline-block;
     margin: 0 10px;
     height: inherit;
+    width: 125px;
     list-style: none;
 }
 
-li.resource-item :hover {
-    background-color: lightgrey;
-}
-
 div.resource-outer {
-    padding: 20px 16px 4px;
-    width: 100px;
     height: inherit;
-    border-radius: 10px;
 }
 
 div.resource-inner {
-    height:inherit;
+    box-sizing: border-box;
+    padding: 20px 16px 4px;
+    width: inherit;
+    height: inherit;
 }
 
-a {
+a.resource-link {
     display: block;
+    height: inherit;
     color: inherit;
     text-decoration: none;
+}
+/*TODO - hackish */
+a.resource-link :hover {
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+a.resource-link:hover div.tile {
+    background-color: white;
+}
+a.resource-link:hover img {
+    background-color: white;
+    border-radius: initial;
 }
 
 div.tile {

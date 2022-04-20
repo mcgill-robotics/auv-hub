@@ -5,13 +5,13 @@ const slack = {
     link: "http://slack.com", 
     imgUrl: "images/slack.svg", 
     alt: "McGill Robotics 2021/22 slack", 
-    name: "slack"
+    name: "Slack"
 };
 const discord = {
     link: "http://discord.com", 
     imgUrl: "images/discord.svg", 
     alt: "McGill Robotics 2021/22 discord", 
-    name: "discord"
+    name: "Discord"
 };
 const googleDrive = {
     link: "http://drive.google.com", 
@@ -109,14 +109,14 @@ class ResourcesList extends React.Component {
 class Resource extends React.Component {
 	render(){
 		return(
-            <a href={this.props.link}>
-                <div className="resource-outer">
+            <div className="resource-outer">
+                <a className="resource-link" href={this.props.link}>
                     <div className="resource-inner" href={this.props.link}>
                         <Tile imgUrl={this.props.imgUrl}/> 
                         <p className="tile-name">{this.props.name}</p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
 		)			
 	}
 }
