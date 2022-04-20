@@ -2,9 +2,9 @@
     "name": "auv-hub",
     "version": "0.1.0",
     "scripts": {
-        "build": "./scripts/build.sh", 
-        "clean": "./scripts/clean.sh", 
-        "serve-dev": "./scripts/serve-dev.sh"
+        "build": "./scripts/build.sh",
+        "clean": "./scripts/clean.sh",
+        "develop": "./scripts/develop.sh"
     },
     "dependencies": {
         "npm": "^8.7.0"
