@@ -44,7 +44,7 @@ const freeCAD = {
     name: "FreeCAD"
 };
 
-class App extends React.Component {
+class Root extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -57,7 +57,7 @@ class App extends React.Component {
 
 	render(){
         return(
-        <div id="root-container">
+        <>
             <h1>McGill Robotics Links</h1>
             <ResourcesList 
                 resources={this.state.roboticsResources}/>
@@ -71,7 +71,7 @@ class App extends React.Component {
             <SubSection 
                 header={"Software"}
                 resources={this.state.softwareResources}/>
-        </div>
+        </>
         )
 	}
 }
@@ -132,4 +132,6 @@ class Tile extends React.Component {
     }
 }
 
-ReactDOM.render(<App/>, document.getElementsByTagName('body')[0]);
+document.addEventListener("DOMContentLoaded", function(event) { 
+    ReactDOM.render(<Root/>, document.getElementById('root-container'));
+});

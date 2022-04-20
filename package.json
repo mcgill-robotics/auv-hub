@@ -1,0 +1,12 @@
+{
+  "name": "auv-hub",
+  "version": "0.1.0",
+  "dependencies": {
+    "npm": "^8.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-react": "^7.16.7"
+  }
+}
