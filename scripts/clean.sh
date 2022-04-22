@@ -1,3 +1,2 @@
 #!/bin/bash
-rm src/*.js
-rm -rf build
+rm -rf dist/ node_modules/ package-lock.json
