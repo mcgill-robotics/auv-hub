@@ -1,6 +1,6 @@
 ---
-import {TileGrid} from ../components/TileGrid.astro;
-import {SubteamSection} from ../components/SubteamSection.astro;
+import TileGrid from "../components/TileGrid.astro";
+import SubteamSection from "../components/SubteamSection.astro";
 
 const slack = {
     link: "http://slack.com", 
@@ -38,10 +38,10 @@ const freeCAD = {
     name: "FreeCAD"
 };
 
-roboticsResources = [slack, discord, googleDrive];
-electricalResources = [kiCAD];
-mechanicalResources = [freeCAD];
-softwareResources = [github, trello];
+const roboticsResources = [slack, discord, googleDrive];
+const electricalResources = [kiCAD];
+const mechanicalResources = [freeCAD];
+const softwareResources = [github, trello];
 ---
 
 <html>
@@ -50,8 +50,7 @@ softwareResources = [github, trello];
     </head>
     <body>
         <h1>McGill Robotics Team-Wide Links</h1>
-        <TileGrid 
-            resources={roboticsResources}/>
+        <TileGrid tiles={roboticsResources}/>
 
         <h1>AUV Links</h1>
         <SubteamSection 

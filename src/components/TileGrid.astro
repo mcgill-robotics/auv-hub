@@ -1,15 +1,15 @@
 ---
-import {Tile} from ./Tile.astro;
+import Tile from "./Tile.astro";
 
-const {link, img, name} = Astro.props;
+const {tiles} = Astro.props;
 ---
 <ul> 
-    {this.props.tiles.map(tile =>
+    {tiles.map(tile =>
         <li> 
             <Tile
-                link={link}
-                img={img}
-                name={name}/>
+                link={tile.link}
+                img={tile.img}
+                name={tile.name}/>
         </li>
     )}
 </ul>
