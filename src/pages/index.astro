@@ -1,23 +1,67 @@
 ---
+import {TileGrid} from ../components/TileGrid.astro;
+import {SubteamSection} from ../components/SubteamSection.astro;
+
+const slack = {
+    link: "http://slack.com", 
+    img: "images/slack.svg", 
+    name: "Slack"
+};
+const discord = {
+    link: "http://discord.com", 
+    img: "images/discord.svg", 
+    name: "Discord"
+};
+const googleDrive = {
+    link: "http://drive.google.com", 
+    img: "images/google-drive.svg", 
+    name: "Google Drive"
+};
+const github = {
+    link: "http://github.com", 
+    img: "images/github.svg", 
+    name: "Github"
+};
+const trello = {
+    link: "http://trello.com", 
+    img: "images/trello.svg", 
+    name: "Trello"
+};
+const kiCAD = {
+    link: "http://kicad.com", 
+    img: "images/kicad.svg", 
+    name: "KiCAD"
+};
+const freeCAD = {
+    link: "http://freecad.com", 
+    img: "images/freecad.svg", 
+    name: "FreeCAD"
+};
+
+roboticsResources = [slack, discord, googleDrive];
+electricalResources = [kiCAD];
+mechanicalResources = [freeCAD];
+softwareResources = [github, trello];
 ---
+
 <html>
     <head>
         <title>McGill Robotics AUV Hub</title>
     </head>
     <body>
         <h1>McGill Robotics Team-Wide Links</h1>
-        <TilesGrid 
-            resources={this.state.roboticsResources}/>
+        <TileGrid 
+            resources={roboticsResources}/>
 
         <h1>AUV Links</h1>
         <SubteamSection 
-            header={"Electrical"}
-            resources={this.state.electricalResources}/>
+            name={"Electrical"}
+            resources={electricalResources}/>
         <SubteamSection 
-            header={"Mechanical"}
-            resources={this.state.mechanicalResources}/>
+            name={"Mechanical"}
+            resources={mechanicalResources}/>
         <SubteamSection 
-            header={"Software"}
-            resources={this.state.softwareResources}/>
+            name={"Software"}
+            resources={softwareResources}/>
     </body>
 </html>
