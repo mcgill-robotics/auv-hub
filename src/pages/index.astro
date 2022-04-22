@@ -1,17 +1,23 @@
 ---
-// Welcome to Astro! Everything between these "---" code fences
-// is your "component front matter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
 ---
-<!-- Below is your "component template." It's just HTML, but with
-     some magic sprinkled in to help you build great templates. -->
 <html>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
+    <head>
+        <title>McGill Robotics AUV Hub</title>
+    </head>
+    <body>
+        <h1>McGill Robotics Team-Wide Links</h1>
+        <TilesGrid 
+            resources={this.state.roboticsResources}/>
+
+        <h1>AUV Links</h1>
+        <SubteamSection 
+            header={"Electrical"}
+            resources={this.state.electricalResources}/>
+        <SubteamSection 
+            header={"Mechanical"}
+            resources={this.state.mechanicalResources}/>
+        <SubteamSection 
+            header={"Software"}
+            resources={this.state.softwareResources}/>
+    </body>
 </html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>
