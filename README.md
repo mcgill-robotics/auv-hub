@@ -3,6 +3,8 @@ Static site generated using [Astro](https://astro.build/) for the McGill Robotic
 Meant to be a central hub containing all relevant links and resources to be used internally 
 within the team.
 
+The live site is available at [http://hub.mcgillrobotics-auv.com](http://hub.mcgillrobotics-auv.com)
+
 ## Dependencies
 
 - nodejs v14+
