@@ -1,6 +1,6 @@
 export const SITE = {
-	title: '',
-	description: 'McGill Robotics AUV main site',
+	title: 'AUV Documentation',
+	description: 'McGill Robotics AUV Docs and Main Site',
 	defaultLanguage: 'en_US',
 };
 
@@ -19,20 +19,20 @@ export const SIDEBAR = {
 	en: [
 		{ text: '', header: true },
 		{ text: 'WELCOME', header: true },
-		{ text: 'About the Team', link: 'en/introduction' },
-		{ text: 'Link Hub', link: 'en/hub' },
+		{ text: 'About the Team', link: 'auv/introduction' },
+		{ text: 'Link Hub', link: 'auv/hub' },
 
 		{ text: 'Software Docs', header: true },
-		{ text: 'Workflow', link: 'en/page-4' },
+		{ text: 'Workflow', link: 'auv/Software/Workflow' },
 
 		{ text: 'Electrical Docs', header: true },
-		{ text: 'Workflow', link: 'en/page-4' },
-		{ text: 'Altium', link: 'en/page-4' },
-		{ text: 'LTSpice', link: 'en/page-4' },
+		{ text: 'Workflow', link: 'auv/Electrical/Workflow' },
+		{ text: 'Altium', link: 'auv/Electrical/Altium' },
+		{ text: 'LTSpice', link: 'auv/Electrical/LTSpice' },
 
 
 		{ text: 'Mechanical Docs', header: true },
-		{ text: 'Workflow', link: 'en/page-4' },
+		{ text: 'Workflow', link: 'auv/Mechanical/Workflow' },
 	],
 };
 

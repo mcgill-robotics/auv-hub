@@ -1,7 +1,7 @@
 ---
 import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from '../../languages';
 import * as CONFIG from '../../config';
-import AstroLogo from './AstroLogo.astro';
+import McgillRoboticsLogo from './McgillRoboticsLogo.astro';
 import SkipToContent from './SkipToContent.astro';
 import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
@@ -19,58 +19,57 @@ const lang = currentPage && getLanguageFromURL(currentPage);
 		</div>
 		<div class="logo flex">
 			<a href="/">
-				<AstroLogo size={40} />
+				<McgillRoboticsLogo size={5} />
 				<h1>{CONFIG.SITE.title ?? "Documentation"}</h1>
 			</a>
 		</div>
-		<div style="flex-grow: 1;"></div>
+		<div style="flex-grow: 0;"></div>
 		{KNOWN_LANGUAGE_CODES.length > 1 && <LanguageSelect lang={lang} client:idle />}
-		{CONFIG.ALGOLIA && (
+		<!-- {CONFIG.ALGOLIA && (
 			<div class="search-item">
 				<Search client:idle />
 			</div>
-		)}
+		)} -->
 	</nav>
 </header>
 
 <style>
 	header {
-		z-index: 11;
-		height: var(--theme-navbar-height);
-		width: 100%;
-		background-color: var(--theme-navbar-bg);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
 		position: sticky;
-		top: 0;
-	}
+		width: 100%;
+		font-size: 1rem;
+		
+		height: var(--theme-navbar-height);
+		background-color: var(--theme-navbar-bg);
+
+		z-index: 1; 
+		/* stack order of an element. Z-Index with a greater value to an HTML element relative to another HTML 
+		element will place the first element on top if they overlap. */
+	}	
 
 	.logo {
 		flex: 1;
 		display: flex;
 		overflow: hidden;
-		width: 30px;
-		font-size: 2rem;
-		flex-shrink: 0;
-		font-weight: 600;
-		line-height: 1;
+		flex-shrink: 2;
+		line-height: 0;
 		color: hsla(var(--color-base-white), 100%, 1);
-		gap: 0.25em;
-		z-index: -1;
+		z-index: 0;
 	}
 
 	.logo a {
 		display: flex;
-		padding: 0.5em 0.25em;
-		margin: -0.5em -0.25em;
-		text-decoration: none;
+		padding: 1em 0.5em;
 		font-weight: bold;
+		color: var(--theme-text);
 	}
 
 	.logo a {
-		transition: color 100ms ease-out;
+		transition: color 1000ms ease-out;
 		color: var(--theme-text);
 	}
 
@@ -80,10 +79,9 @@ const lang = currentPage && getLanguageFromURL(currentPage);
 	}
 
 	.logo h1 {
-		display: none;
-		font: inherit;
-		color: inherit;
-		margin: 0;
+		/* display: none; */
+		visibility: hidden;
+		margin-left: 2rem;
 	}
 
 	.nav-wrapper {
@@ -92,29 +90,33 @@ const lang = currentPage && getLanguageFromURL(currentPage);
 		justify-content: flex-end;
 		gap: 1em;
 		width: 100%;
-		max-width: 82em;
-		padding: 0 1rem;
+		max-width: 100%;
+		padding: 2rem 2rem;
 	}
-
+	
 	@media (min-width: 50em) {
 		header {
-			position: static;
-			padding: 2rem 0rem;
+			position: relative;
+			padding: 3rem 0rem;
+			font-size: 1rem;
 		}
 		.logo {
-			width: auto;
 			margin: 0;
 			z-index: 0;
+			font-size: 1rem;
 		}
 		.logo h1 {
-			display: initial;
+			/* display: initial; */
+			visibility: inherit;
 		}
 		.menu-toggle {
 			display: none;
 		}
 	}
 
-	/** Style Algolia */
+
+
+	/** Style Algolia*/
 	:root {
 		--docsearch-primary-color: var(--theme-accent);
 		--docsearch-logo-color: var(--theme-text);

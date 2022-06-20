@@ -1,6 +1,6 @@
 ---
-import { getLanguageFromURL } from '../../languages';
-import { SIDEBAR } from '../../config';
+import { getLanguageFromURL } from '../../languages.ts';
+import { SIDEBAR } from '../../config.ts';
 
 const { currentPage } = Astro.props;
 const currentPageMatch = currentPage.slice(1);
@@ -64,33 +64,36 @@ const sidebarSections = SIDEBAR[langCode].reduce((col, item, i) => {
 		overflow-x: visible;
 		overflow-y: auto;
 		max-height: 100vh;
+		padding-top: 6em;
+		padding-left: 2em;
+		top: 0;
 	}
 
 	.nav-groups > li + li {
-		margin-top: 2rem;
+		margin-top: var(--doc-padding);
 	}
 
 	.nav-groups > :first-child {
-		padding-top: var(--doc-padding);
+		padding-top: 0;
 	}
 
 	.nav-groups > :last-child {
-		padding-bottom: 2rem;
+		padding-bottom: 2em;
 		margin-bottom: var(--theme-navbar-height);
 	}
 
 	.nav-group-title {
 		font-size: 1rem;
-		font-weight: 700;
-		padding: 0.1rem 1rem;
+		font-weight: 600;
+		padding: 0rem 0rem;
 		text-transform: uppercase;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.3rem;
 	}
 
 	.nav-link a {
 		font-size: 2rem;
-		margin: 1px;
-		padding: 0.3rem 1rem;
+		margin-left: 5px;
+		padding: 0.2rem 0.2rem;
 		font: inherit;
 		color: inherit;
 		text-decoration: none;
@@ -113,7 +116,7 @@ const sidebarSections = SIDEBAR[langCode].reduce((col, item, i) => {
 
 	@media (min-width: 50em) {
 		.nav-groups {
-			padding: 0;
+			padding: 0em;
 		}
 	}
 </style>

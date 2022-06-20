@@ -1,0 +1,13 @@
+---
+const {size} = Astro.props;
+const img = "../../images/McGill_Robotics_Logo_white.svg"
+---
+
+<svg class="logo" width={size} height={size} viewBox="0 0 165 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		#logo {
+			filter: var(--theme-logo-accent);
+		}
+	</style>
+	<img id="logo" fill-rule="evenodd" clip-rule="evenodd" src={img}/>
+</svg>

@@ -22,10 +22,10 @@ const MenuToggle: FunctionalComponent = () => {
 			onClick={() => setSidebarShown(!sidebarShown)}
 		>
 			<svg
-				width="1em"
-				height="1em"
+				width="2em"
+				height="2em"
 				fill="none"
-				viewBox="0 0 57 57"
+				viewBox="0 0 25 25"
 				stroke="currentColor"
 			>
 				<path
